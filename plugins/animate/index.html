@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>animate--动画插件</title>
+<script type="text/javascript" src="../../zLib-development.js"></script>
+<script type="text/javascript" src="animate.js"></script>
+<style type="text/css">
+*{ margin:0; padding:0;}
+#obj{ color:red; height:228px; border:1px solid #000; overflow:hidden; width:330px; margin:50px auto 0;}
+#obj ul{ float:left;}
+#obj ul li{ float:left; list-style:none;}
+</style>
+
+</head>
+
+
+<body>
+<div id="obj">
+	<div style="width:9999px;">
+    	<ul>
+            <li><img src="images/1.gif" width="330" height="228" /></li>
+            <li><img src="images/2.gif" width="330" height="228" /></li>
+            <li><img src="images/3.gif" width="330" height="228" /></li>
+            <li><img src="images/4.gif" width="330" height="228" /></li>
+            <li><img src="images/5.gif" width="330" height="228" /></li>
+        </ul>
+        <ul>
+            <li><img src="images/1.gif" width="330" height="228" /></li>
+            <li><img src="images/2.gif" width="330" height="228" /></li>
+            <li><img src="images/3.gif" width="330" height="228" /></li>
+            <li><img src="images/4.gif" width="330" height="228" /></li>
+            <li><img src="images/5.gif" width="330" height="228" /></li>
+        </ul>
+    </div>
+</div>
+<input type="button" id="handle" value="run" />
+<script type="text/javascript">
+$("#obj").focusImg({
+    c: 330,
+    d: 30,
+    direc: "toLeft",
+    tweenName: "Back",
+    easeName: "easeOut"
+});
+</script>
+</body>
+
+</html>

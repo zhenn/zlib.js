@@ -1,0 +1,98 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\Documents and Settings\zhenn.Y\桌面\zLib\zLib-API.CHM
+
+ajax\zlib.static.ajax(options).html
+CSS\css\getCss(property).html
+CSS\css\setCss(styles).html
+CSS\css\setStyle(property,value).html
+CSS\尺寸\getHeight().html
+CSS\尺寸\getWidth().html
+CSS\尺寸\zlib.static.pageHeight().html
+CSS\尺寸\zlib.static.pageWidth().html
+CSS\尺寸\zlib.static.windowHeight().html
+CSS\尺寸\zlib.static.windowWidth().html
+CSS\动态样式表\addStyleSheet(url,[_media]).html
+CSS\动态样式表\removeStyleSheet(url).html
+CSS\透明度\setOpacity(level).html
+CSS\位置\gapsX().html
+CSS\位置\gapsY().html
+CSS\位置\parentX().html
+CSS\位置\parentY().html
+CSS\位置\zlib.static.getElementX(e).html
+CSS\位置\zlib.static.getElementY(e).html
+CSS\位置\zlib.static.getX(e).html
+CSS\位置\zlib.static.getY(e).html
+CSS\位置\zlib.static.scrollX().html
+CSS\位置\zlib.static.scrollY().html
+CSS\颜色值格式转换\zlib.static.colorToNormal(str).html
+CSS\颜色值格式转换\zlib.static.colorToRGB(str).html
+style\global.css
+关于zLib.html
+基本\each(callback).html
+基本\getClass(index).html
+基本\getDom([index]).html
+基本\one(filter,callback).html
+基本\size().html
+检测数据类型\zlib.static.getType(obj).html
+简单动画\fadeIn([speed],[callback]).html
+简单动画\fadeOut([speed],[callback]).html
+简单动画\fadeToggle([speed],[callback]).html
+简单动画\hide([speed],[callback]).html
+简单动画\show([speed],[callback]).html
+简单动画\slideDown([speed],[callback]).html
+简单动画\slideToggle([speed],[callback]).html
+简单动画\slideUp([speed],[callback]).html
+简单动画\toggle([speed],[callback]).html
+事件\访问键盘\zlib.static.getKey(e).html
+事件\默认动作\zlib.static.preventDefault(e).html
+事件\目标元素\zlib.static.getTarget(e).html
+事件\事件绑定\bindEvent(eventType,callback).html
+事件\事件绑定\isMouseLeaveOrEnter(e).html
+事件\事件绑定\mouseHover(fn1,fn2).html
+事件\事件冒泡\zlib.static.stopBubble(e).html
+文档处理\查找元素\first().html
+文档处理\查找元素\last().html
+文档处理\查找元素\next().html
+文档处理\查找元素\parent([num]).html
+文档处理\查找元素\prev().html
+文档处理\复制元素\clone().html
+文档处理\内部插入\append(para).html
+文档处理\内部插入\appendTo(para).html
+文档处理\内部插入\prepend(para).html
+文档处理\内部插入\prependTo(para).html
+文档处理\删除\empty().html
+文档处理\删除\remove().html
+文档处理\外部插入\after(para).html
+文档处理\外部插入\before(para).html
+文档处理\外部插入\insertAfter(para).html
+文档处理\外部插入\insertBefore(para).html
+选择器\class.html
+选择器\createHTMLTag.html
+选择器\id,tagName.html
+选择器\id.html
+选择器\object,tagName.html
+选择器\object.html
+选择器\tagName.html
+属性\class\addClass(classname).html
+属性\class\hasClass(classname).html
+属性\class\removeClass(classname).html
+属性\Html\html([val]).html
+属性\属性\attr(name,[value]).html
+属性\属性\attrs(pros).html
+属性\属性\removeAttr(name).html
+bottom.html
+ecTOC.HHC
+ecINDEX.HHK
+..\..\..\..\..\DOCUME~1\zhenn.Y\LOCALS~1\Temp\EasyCHM.html
+top.html
+
+Compile time: 0 minutes, 2 seconds
+83	Topics
+316	Local links
+13	Internet links
+0	Graphics
+
+
+Created c:\Documents and Settings\zhenn.Y\桌面\zLib\zLib-API.CHM, 76,225 bytes
+Compression decreased file by 177,663 bytes.

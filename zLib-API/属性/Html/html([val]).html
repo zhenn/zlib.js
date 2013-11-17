@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>html([val])</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>html([val])</h1>
+	<div class="content">给所匹配元素赋innerHTML值，或者返回所匹配元素中第一个元素的innerHTML值</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><b>val(String)</b>：可选参数，用于设定innerHTML的值</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">1，传参，则为赋值运算，返回zlib<br />
+        2，无参，返回String，所匹配元素集中第一个元素的innerHTML 值 </div>
+	<h2>用法演示</h2>
+	<h3>给id=&quot;obj&quot;下所有li元素赋innerHTML值</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).html(&quot;I'm new content!&quot;)</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>[&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;I'm new content!&lt;/li&gt;&lt;li&gt;I'm new content!&lt;/li&gt;&lt;li&gt;I'm new content!&lt;/li&gt;&lt;li&gt;I'm new content!&lt;/li&gt;&lt;/ul&gt;]</p>
+  </div>
+  
+  <h3>获得id=&quot;obj&quot;下第一个li元素innerHTML值</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).html()</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>&quot;1&quot;</p>
+  </div>
+  
+  
+	
+	
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

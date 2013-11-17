@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>drag--拖动插件</title>
+<script type="text/javascript" src="../../zLib-development.js"></script>
+<style type="text/css">
+*{ margin:0; padding:0; font-family:Arial;}
+#container{ width:1000px; margin:0 auto; overflow:hidden;}
+#leftSide{ float:left; width:260px; min-height:100px; _height:100px;}
+#center{ float:left; width:400px; margin-left:20px; display:inline; min-height:100px; _height:100px;}
+#rightSide{ float:right; width:300px;  min-height:100px; _height:100px;}
+.template{ line-height:20px; font-size:12px; margin-bottom:12px;}
+.template h2{ color:#fff; background:#009900; line-height:26px; font-size:14px; padding-left:10px; cursor:move;}
+.template .content{ background:#eee; height:150px; padding:10px 0 0 10px;}
+.handle{ width:1000px; margin:10px auto;}
+</style>
+</head>
+
+
+<body>
+<div class="handle">
+	<button id="btn1">保存当前布局</button>
+	<button id="btn2">删除cookie</button>
+</div>
+<div id="container">
+	<div id="leftSide" class="container">
+		<div id="drag1" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--1</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+		<div id="drag2" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--2</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+		<div id="drag3" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--3</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+	</div>
+	
+	<div id="center" class="container">
+		<div id="drag4" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--4</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+		<div id="drag5" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--5</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+		<div id="drag6" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--6</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+	</div>
+	
+	<div id="rightSide" class="container">
+		<div id="drag7" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--7</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+		<div id="drag8" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--8</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+		<div id="drag9" class="template" title="targetObj">
+			<h2 class="title">可拖动区域--9</h2>
+			<div class="content">this is test content!<br>please move it by dragging the title.</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="drag.js"></script>
+<script type="text/javascript">
+	//保存当前布局，存入cookie
+	$("#btn1").bindEvent("click",function(){
+		var divLeft = $("#leftSide","div").getDom();
+		var divCenter = $("#center","div").getDom();
+		var divRight = $("#rightSide","div").getDom();
+		var str = "left:";
+		for(var i=0;i<divLeft.length;i++){
+			if(divLeft[i].title == "targetObj"){
+				str += divLeft[i].id + ",";
+			}
+		}
+		str += "|center:";
+		for(var i=0;i<divCenter.length;i++){
+			if(divCenter[i].title == "targetObj"){
+				str += divCenter[i].id + ",";
+			}
+		}
+		str += "|right:";
+		for(var i=0;i<divRight.length;i++){
+			if(divRight[i].title == "targetObj"){
+				str += divRight[i].id + ",";
+			}
+		}
+		zlib.setCookie("pos",str,1);
+		
+	});
+	
+	//加载dom
+	$(window).bindEvent("load",function(){
+		var resultArr = [];
+		var subArr1 = [], subArr2 = [], subArr3 = [];
+		var resultStr = zlib.getCookie("pos");
+		if(resultStr){
+			resultArr = resultStr.split("|");
+			subArr1 = resultArr[0].replace("left:","").split(",");
+			subArr2 = resultArr[1].replace("center:","").split(",");
+			subArr3 = resultArr[2].replace("right:","").split(",");
+			for(var i=0;i<subArr1.length-1;i++){
+				$("#"+subArr1[i]).appendTo($("#leftSide"));
+			}
+			for(var i=0;i<subArr2.length-1;i++){
+				$("#"+subArr2[i]).appendTo($("#center"));
+			}
+			for(var i=0;i<subArr3.length-1;i++){
+				$("#"+subArr3[i]).appendTo($("#rightSide"));
+			}
+		}
+	});
+	
+	
+	//清除cookie，还原初始化布局
+	$("#btn2").bindEvent("click",function(){
+		zlib.deleteCookie("pos");
+		for(var i=1;i<4;i++){
+			$("#drag"+i).appendTo($("#leftSide"));
+		}
+		for(var i=4;i<7;i++){
+			$("#drag"+i).appendTo($("#center"));
+		}
+		for(var i=7;i<10;i++){
+			$("#drag"+i).appendTo($("#rightSide"));
+		}
+	});
+	
+</script>
+</body>
+</html>

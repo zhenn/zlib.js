@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>zlib.static.getElementX(e)</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>zlib.static.getElementX(e)</h1>
+	<div class="content">获得鼠标相对于当前元素(事件对象&quot;e&quot;的属性target)的水平偏移量</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>e</strong>：事件对象</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">Number</div>
+	<h2>用法演示</h2>
+	<h3>获得鼠标相对于当前元素(事件对象&quot;e&quot;的属性target)的水平和垂直偏移量，并且把实时的显示在window的状态栏里</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>无</p>
+  </div>
+	<h4>zLib 代码</h4>
+	<div class="code">
+		<p>$(document).bindEvent(&quot;mousemove&quot;,function(e){<br />
+　　window.status = zlib.static.getElementX(e) + &quot; &quot; + zlib.static.getElementY(e);<br />
+});</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>在状态栏实时的显示鼠标相对于目标元素的水平和垂直方向的偏移量。</p>
+  </div>
+	
+	
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>one(filter,callback)</title>
+<link href="../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>one(filter,callback)</h1>
+	<div class="content">有条件寻找一个dom对象来执行回调函数</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><b>filter</b>(Number or String)：查找dom元素的两种格式（索引值从 0 开始）</p>
+	  <p><strong>callback</strong>(Function)：回调函数</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">zlib</div>
+	<h2>用法演示</h2>
+	<h3>查找id=&quot;obj&quot;下的第三个li元素，并且设置它的innerHTML。注意:此处 <em style="text-decoration:underline; color:blue">el</em> 指代的是 <em style="text-decoration:underline; color:blue">DOM 对象</em>而非 zlib 对象</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).one(2,function(el){</p>
+		<p>　　el.innerHTML = &quot;zhenn&quot;; </p>
+		<p>});</p>
+		<p><strong>or</strong></p>
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).one(2,function(el){</p>
+        <p>　　$(el).html(&quot;zhenn&quot;); </p>
+      <p>});</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;zhenn&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+  </div>
+  
+  <h3>查找id=&quot;obj&quot;下的title=&quot;new&quot;的li元素，并且设置它的innerHTML。注意:此处 <em style="text-decoration:underline; color:blue">el</em> 指代的是 <em style="text-decoration:underline; color:blue">DOM 对象</em>而非 zlib 对象</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li title=&quot;new&quot; &gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).one(&quot;title:new&quot;,function(el){</p>
+		<p>　　el.innerHTML = &quot;zhenn&quot;; </p>
+		<p>});</p>
+		<p><strong>or</strong></p>
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).one(&quot;title:new&quot;,function(el){</p>
+        <p>　　$(el).html(&quot;zhenn&quot;); </p>
+      <p>});</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li title=&quot;new&quot;&gt;zhenn&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+  </div>
+	
+	
+	<iframe src="../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

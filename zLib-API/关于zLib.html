@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>about zLib.js</title>
+<link href="style/global.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+h1{ background:none; color:#000; padding:0}
+p{ text-indent:2em; margin-top:12px; line-height:24px;}
+ul{ padding-left:2em;}
+li{ list-style:decimal; margin-left:2em; margin-top:10px;}
+</style>
+</head>
+
+<body>
+<div id="container">
+	<iframe src="top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	<h1>关于zLib</h1>
+	<p>世界上的事儿，从来都是没有定论的，既定的目标也未必能如愿，可能就是在你离目标越来越近的时候，会遇到另外一个选择，逐渐让你和目标渐行渐远。关于这点，写zLib的过程就是一个实实在在的例子！<p>
+	<p>写zLib的初衷只是想总结一些平时自己常用的函数，以便加快前端开发的进程，并不敢想象成就一个真正的JavaScript框架。但是在这个过程中，考虑到时下正流行的OOP，自己也难免落入俗套，于是设计理念转向了OOP，呵呵，虽然JavaScript不能算是一门面向对象编程的语言，只是基于对象而已，但是它特有的灵活度，完全可以模拟出来所谓的OOP。这样一来，本来三两天就可以搞定的事情，足足耗费了我一个月的时间（当然是工作之余），加上最后编写这个API文档，可真是觉得有些费时费力了。</p>
+	<p>说说zLib的特性：</p>
+	<ul>
+		<li>简约快速的CSS选择器</li>
+		<li>DOM扩展：<br />zLib的主要内容，众所周知，javascript主要应用于Web开发，那么浏览器端环境里的DOM当然是每个框架的首要扩展目标，如果zLib不提供DOM扩展，那真的是一无是处了。</li>
+		<li>动画</li>
+		<li>非侵入式调用，相信用户很痛恨Dojo的这一点</li>
+		<li>保持和原生对象一致，即没有对JavaScript原生对象进行原型扩展，套用一句名言：“不要修改原生对象的prototype，除非你认为必要。”</li>
+		<li>提供完美的兼容解决方案，zLib兼容市场目前的主流浏览器：Internet Explorer6+, Mozilla Firefox 2, Safari 2+, Chrome, Opera 9+, 及其他基于IE内核的浏览器如Maxthon、360、Sogou等。</li>
+		<li>简易ajax的实现</li>
+	</ul>
+	<p>可以实现很时髦的链式调用，例如，对html文档中的所有div进行操作，可以用如下方法调用：$("div").setStyle("color","#f00").html("test").bindEvent("click",function(){ alert($(this).html())});如果觉得这种写法会使代码可读性降低，当然可以采用分段式写法，这个完全由个人喜好所决定！</p>
+	<p>诚然，zLib到目前为止，不能算是js framework，因为它不具备其他第三方程序库强悍的功能，我只把他当做自己的library来使用，但是如果zLib有幸被你下载并使用，那么这个API文档将会对你十分有帮助，因为利用它，你可以轻松的调用zlib的内部定义的方法来帮你完成手头上的任务，而不必在意这个方法究竟是怎么实现的。</p>
+	<iframe src="bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+
+</body>
+</html>

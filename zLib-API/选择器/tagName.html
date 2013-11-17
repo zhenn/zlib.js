@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>tagName</title>
+<link href="../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>tagName</h1>
+	<div class="content">根据tagName匹配元素</div>
+	<h2>参数</h2>
+	<div class="content"><b>tagName</b>(String)：html标签类型。</div>
+	<h2>返回值</h2>
+	<div class="content">zlib</div>
+	<h2>用法演示</h2>
+	<h3>查找所有标签名为&quot;li&quot;的元素</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;obj&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;div class=&quot;new&quot;&gt;zhenn&lt;/div&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+	<div class="code">
+		<p>$(&quot;li&quot;)</p>
+	</div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>[&lt;li&gt;1&lt;/li&gt;,&lt;li&gt;2&lt;/li&gt;,&lt;li&gt;3&lt;/li&gt;,&lt;li&gt;4&lt;/li&gt;]</p>
+  </div>
+	
+	
+	<iframe src="../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

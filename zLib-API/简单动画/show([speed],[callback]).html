@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>show([speed],[callback])</title>
+<link href="../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>show([speed],[callback])</h1>
+	<div class="content">
+	  <p>显示所匹配元素（无动画版本和动画版本）（只对display:none元素有效）</p>
+	  <p>没有参数，则为无动画版本，传一个参数两个二个参数，则为动画版本。</p>
+	  <p><b>注意：</b>务必设置所匹配元素的width，不能为百分比并且不能使用内嵌式css(内联或外联均可)，否则会导致在display:none的情况下，获取的getWidth()不准确</p>
+	</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>[speed]</strong>(String)：为可选参数，变化的速度，有三个可选值，&quot;slow&quot;,&quot;normal&quot;,&quot;fast&quot;，默认值为&quot;normal&quot;<br />
+        <strong>[callback]</strong>(Function)：为可选参数，动画执行完毕时的回调函数</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">无</div>
+	<h2>用法演示</h2>
+	<h3>单击按钮&quot;show&quot;,通过逐渐增加元素的宽度、高度、不透明度来逐渐显示元素，并在执行完毕后弹出提示信息！</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	  <p>&lt;<strong>style</strong> type=&quot;text/css&quot;&gt;<br />
+	    *{ margin:0; padding:0;}<br />
+	    #obj{ color:red; border:1px solid #000; width:500px;}<br />
+	    #obj li{ background:#666;}<br />
+      &lt;/<strong>style</strong>&gt;</p>
+	  <p>&lt;ul id=&quot;obj&quot; style=&quot;display:none;&quot;&gt;<br /> 　　
+&lt;li&gt;zhenn&lt;/li&gt;<br /> 　　
+&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br /> 　　
+&lt;li&gt;let me tell you &lt;/li&gt;<br /> 　　
+&lt;li&gt;success&lt;/li&gt;<br />
+&lt;/ul&gt; <br />
+&lt;<strong>input</strong> type=&quot;button&quot; value=&quot;show&quot; id=&quot;show&quot; /&gt;</p>
+  </div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#show&quot;).bindEvent(&quot;click&quot;,function(){<br />
+　　$(&quot;#obj&quot;).show(&quot;fast&quot;,function(){<br />
+　　　　alert(&quot;over&quot;);<br />
+　　});<br />
+});</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>单击按钮&quot;show&quot;,通过逐渐增加元素的宽度、高度、不透明度来逐渐显示元素，并在执行完毕后弹出提示信息！</p>
+  </div>
+  
+  
+	<iframe src="../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>hasClass(classname)</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>hasClass(classname)</h1>
+	<div class="content">判断所匹配元素是否含有所匹配的className</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><b>classname</b>(String)：要匹配的className</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">Boolean</div>
+	<h2>用法演示</h2>
+	<h3>判断id=&quot;obj&quot;元素的class中是否含有&quot;new&quot;</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;<strong>obj</strong>&quot; class=&quot;new other&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;).hasClass(&quot;new&quot;)</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>true</p>
+  </div>
+  
+
+  
+  
+	
+	
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

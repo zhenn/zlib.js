@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>getDom([index])</title>
+<link href="../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>getDom([index])</h1>
+	<div class="content">返回所匹配的dom元素或者dom元素集</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><b>index</b>(Number)：可选参数，索引值从 0 开始</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">dom元素或者dom元素集</div>
+	<h2>用法演示</h2>
+	<h3>查找id=&quot;obj&quot;下的第三个li元素，并且设置它的innerHTML。</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).getDom(2).innerHTML = &quot;zhenn&quot;;</p>
+		<p><strong>or</strong></p>
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).getDom()[2].innerHTML = &quot;zhenn&quot;;</p>
+		<p>&nbsp;</p>
+		<p><em>很显然</em>，$(&quot;#obj&quot;,&quot;li&quot;).getDom(2).html(&quot;zhenn&quot;)，会提示语法错误，因为$(&quot;#obj&quot;,&quot;li&quot;).getDom(2)返回的是dom元素,而不是zlib</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>&lt;ul id=&quot;<strong>obj</strong>&quot;&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;zhenn&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;</p>
+  </div>
+  
+  
+	
+	
+	<iframe src="../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

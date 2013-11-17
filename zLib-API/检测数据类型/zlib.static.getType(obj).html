@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>zlib.static.getType(obj)</title>
+<link href="../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>zlib.static.getType(obj)</h1>
+	<div class="content">准确判断对象（数据）类型，相对于typeof，增强了null,object,array的区分</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>obj</strong>(任何类型)</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">String,如&quot;string&quot;,&quot;function&quot;,&quot;array&quot;,&quot;object&quot;,&quot;null&quot;,&quot;undefined&quot;,&quot;number&quot;,&quot;regexp&quot;,&quot;math&quot;,&quot;date&quot;</div>
+	<h2>用法演示</h2>
+	<h3>检测数据类型</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>无</p>
+	    </div>
+	<h4>zLib 代码</h4>
+	<div class="code">
+		<p>zlib.static.getType(function(){...}) //返回&quot;function&quot; </p>
+		<p>zlib.static.getType(&quot;test&quot;) //返回&quot;string&quot; </p>
+		<p>zlib.static.getType(1) //返回&quot;number&quot; </p>
+		<p>zlib.static.getType(null) //返回&quot;null&quot; </p>
+		<p>zlib.static.getType(undefined) //返回&quot;undefined&quot; </p>
+		<p>zlib.static.getType([1,2,3]) //返回&quot;array&quot;</p>
+		<p>zlib.static.getType({a:1,b:&quot;zhenn&quot;}) //返回&quot;object&quot;</p>
+		<p>zlib.static.getType(new Date()) //返回&quot;date&quot;</p>
+		<p>zlib.static.getType(Math) //返回&quot;math&quot;  </p>
+		<p>zlib.static.getType(new RegExp()) //返回&quot;regexp&quot;</p>
+	</div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>见上</p>
+  </div>
+	
+	
+	<iframe src="../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

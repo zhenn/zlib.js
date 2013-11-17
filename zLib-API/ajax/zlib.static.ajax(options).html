@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>zlib.static.ajax(options)</title>
+<link href="../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>zlib.static.ajax(options)</h1>
+	<div class="content">完整的处理ajax的函数</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><b>options</b>(Object)：是个js对象类型，各个属性提供默认值，见下</p>
+	  <p>options = {<br />
+　　/*发送请求的方法*/<br />
+　　type: options.type || &quot;post&quot;,<br />
+　　/*请求的url地址*/<br />
+　　url: options.url || &quot;&quot;,<br />
+　　/*超时时间*/<br />
+　　timeout: options.timeout || 5000,<br />
+　　/*完成请求的回调函数*/<br />
+　　onComplete: options.onComplete || function(){},<br />
+　　/*请求失败的回调函数*/<br />
+　　onError: options.onError || function(){},<br />
+　　/*请求成功的回调函数*/<br />
+　　onSuccess: options.onSuccess || function(){},<br />
+　　/*返回数据的数据类型*/<br />
+　　dataType: options.dataType || &quot;xml&quot;<br />
+}</p>
+	</div>
+	<h2>返回值</h2>
+	<div class="content">无</div>
+	<h2>用法演示</h2>
+	<h3>简单的ajax例子</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;h2&gt;请选择一个省份：&lt;/h2&gt;<br />
+	      &lt;div class=&quot;choose&quot;&gt;<br /> 　　
+&lt;select id=&quot;pro&quot;&gt;<br /> 　　　　
+&lt;option value=&quot;&quot;&gt;请选择一下吧&lt;/option&gt;<br /> 　　　　
+&lt;option value=&quot;aa&quot;&gt;111111111&lt;/option&gt;<br /> 　　　　
+&lt;option value=&quot;bb&quot;&gt;2&lt;/option&gt;<br /> 　　　　
+&lt;option value=&quot;cc&quot;&gt;3&lt;/option&gt;<br /> 　　　　
+&lt;option value=&quot;dd&quot;&gt;4&lt;/option&gt;<br /> 　　　　
+&lt;option value=&quot;ee&quot;&gt;5&lt;/option&gt;<br /> 　　
+&lt;/select&gt;<br />
+&lt;/div&gt;<br />
+&lt;div id=&quot;city&quot; style=&quot;border:1px solid #000;&quot;&gt;&lt;/div&gt;</p>
+  </div>
+	<h4>zLib 代码</h4>
+	<div class="code">
+		<p>$(&quot;#pro&quot;).bindEvent(&quot;change&quot;,function(){
+		  <br />
+　　var url2 = &quot;test.php?prov=&quot; + this.value;<br />
+　　if(proval==null||proval==&quot;&quot;){<br />
+　　　　return;<br />
+　　}<br />
+　　zlib.static.ajax({<br />
+　　　　type: &quot;get&quot;,<br />
+　　　　url: url2,<br />
+　　　　data: &quot;text&quot;,<br />
+　　　　onSuccess: function(html){<br />
+　　　　　　$(&quot;#city&quot;).html(html);<br />
+　　　　}<br />
+});<br />
+});</p>
+  </div>
+  <h4>PHP 代码(test.php)</h4>
+	<div class="code">
+		<p>&lt;?php<br />
+　　$city_arr = array(<br /> 　　　　
+&quot;aa&quot; =&gt; &quot;我是Ajax测试1&quot;,<br /> 　　　　
+&quot;bb&quot; =&gt; &quot;我是Ajax测试2&quot;,<br /> 　　　　
+&quot;cc&quot; =&gt; &quot;我是Ajax测试3&quot;,<br /> 　　　　
+&quot;dd&quot; =&gt; &quot;我是Ajax测试4&quot;,<br /> 　　　　
+&quot;ee&quot; =&gt; &quot;我是Ajax测试5&quot;,<br />
+　　);<br />
+<br />
+　　$prov = $_GET[&quot;prov&quot;];
+<br />
+　　echo $city_arr[$prov];<br />
+?&gt;</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>选择不同的select的选项时，在id=&quot;city&quot;的div中显示相应的数据！</p>
+  </div>
+	
+	
+	<iframe src="../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

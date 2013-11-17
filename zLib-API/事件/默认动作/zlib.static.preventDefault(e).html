@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>zlib.static.preventDefault(e)</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>zlib.static.preventDefault(e)</h1>
+	<div class="content">什么是事件的默认动作？例如，默认情况下点击一个&lt;a&gt;元素,页面会跳转到该元素href属性指定的页面。另外在提交表单的时候，要在客户端判断信息是否属实，是否漏填信息，如果符合上面任一种的条件，那么我们需要，在客户端输出提示信息，而并不会提交至服务器处理，这时候就需要阻止默认事件的发生！</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>e</strong>：事件对象
+	  </p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">无</div>
+	<h2>用法演示</h2>
+	<h3>点击超链接，阻止跳转页面</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	  <p>&lt;ul id=&quot;obj&quot;&gt;</p>
+	    <p>　　　&lt;li&gt;<strong>&lt;a href=&quot;http://www.men-ideal.com&quot;&gt;zhenn&lt;/a&gt;</strong>&lt;/li&gt;</p>
+	    <p>　　　&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br />
+  　　　&lt;li&gt;let me tell you &lt;/li&gt;<br />
+  　　　&lt;li&gt;success&lt;/li&gt;<br />
+  &lt;/ul&gt;      </p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+  </div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).bindEvent(&quot;click&quot;,function(e){</p>
+		<p>　　alert($(this).html());<br />
+		  　　zlib.static.<strong>preventDefault</strong>(e); <br />
+		  });</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>点击第一个li元素，弹出提示信息，但是不会跳转页面！</p>
+  </div>
+  
+  
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

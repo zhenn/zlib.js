@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>attr(name,[value])</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>attr(name,[value])</h1>
+	<div class="content">获得所匹配元素中第一个元素的属性name的值，或者给所匹配元素赋单个属性值</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>name</strong>(String)：所要操作的属性名<br />
+        <strong>value</strong>(String)：可选参数，所要操作的属性值</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">zlib</div>
+	<h2>用法演示</h2>
+	<h3>给id=&quot;obj&quot;下的所有li元素增加属性title=&quot;newTitle&quot;</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	    <p>&lt;ul id=&quot;obj&quot;&gt;<br /> 　　
+&lt;li&gt;1&lt;/li&gt;<br /> 　　
+&lt;li&gt;2&lt;/li&gt;<br /> 　　
+&lt;li&gt;3&lt;/li&gt;<br /> 　　
+&lt;li&gt;4&lt;/li&gt;<br />
+&lt;/ul&gt;</p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+  </div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;,&quot;li&quot;).attr(&quot;title&quot;,&quot;newTitle&quot;);</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>&lt;ul id=&quot;obj&quot;&gt;<br />
+　　
+&lt;li title=&quot;newTitle&quot;&gt;1&lt;/li&gt;<br />
+　　
+&lt;li title=&quot;newTitle&quot;&gt;2&lt;/li&gt;<br />
+　　
+&lt;li title=&quot;newTitle&quot;&gt;3&lt;/li&gt;<br />
+　　
+&lt;li title=&quot;newTitle&quot;&gt;4&lt;/li&gt;<br />
+&lt;/ul&gt;</p>
+  </div>
+  
+
+  
+  
+	
+	
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>isMouseLeaveOrEnter(e)</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>isMouseLeaveOrEnter(e)</h1>
+	<div class="content">一个有重要意义的方法，字面理解这个函数的意义，是否真正的离开或进入一个元素，主要是对mouseover,mouseout事件关联对象的判断，利用这个方法的返回值，可屏蔽从父元素到子元素的mouseout的事件处理程序，也可屏蔽从子元素回到父元素的mouseover事件处理程序，
+真正做到mouseover,mouseout只对父元素有效，子元素则无效</div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>e</strong>：事件对象<br />
+	  </p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">Boolean</div>
+	<h2>用法演示</h2>
+	<h3>给id=&quot;obj&quot;元素下所有li元素增加事件监听mouseover mouseout，来测试isMouseLeaveOrEnter的作用 </h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	  <p>&lt;ul id=&quot;obj&quot;&gt;</p>
+	    <p>　　　&lt;li&gt;zhenn&lt;/li&gt;</p>
+	    <p>　　　&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br />
+  　　　&lt;li&gt;let me tell you &lt;/li&gt;<br />
+  　　　&lt;li&gt;success&lt;/li&gt;<br />
+  &lt;/ul&gt;      </p>
+	    <p>&lt;ul&gt;&lt;li&gt;other&lt;/li&gt;&lt;/ul&gt;</p>
+	    <p>&lt;<strong>style</strong> type=&quot;text/css&quot;&gt;<br />
+	      *{ margin:0; padding:0; }<br />
+	      #obj{ color:red; border:1px solid #000; width:90%; overflow:hidden; margin:50px auto;}<br />
+	      #obj li{ background:#666; float:left; margin-right:10px;}<br />
+        &lt;/<strong>style</strong>&gt;</p>
+	</div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;#obj&quot;).bindEvent(&quot;mouseover&quot;,function(){<br />
+　　alert(&quot;enter&quot;);<br />
+});<br />
+$(&quot;#obj&quot;).bindEvent(&quot;mouseout&quot;,function(){<br />
+　　alert(&quot;leave&quot;);<br />
+});</p>
+		<p><em><strong>or</strong></em></p>
+		<p>$(&quot;#obj&quot;).bindEvent(&quot;mouseover&quot;,function(e){<br />
+　　if($(this).<strong>isMouseLeaveOrEnter</strong>(e)){<br />
+　　　　alert(&quot;enter&quot;);<br />
+　　}<br />
+});<br />
+$(&quot;#obj&quot;).bindEvent(&quot;mouseout&quot;,function(e){<br />
+　　if($(this).<strong>isMouseLeaveOrEnter</strong>(e)){<br />
+　　　　alert(&quot;leave&quot;);<br />
+　　}<br />
+});</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+		<p>分别运行上面两段代码，可以很清楚地看到isMouseLeaveOrEnter的作用，不再赘述！</p>
+  </div>
+  
+  
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+	
+	
+</div>
+</body>
+</html>

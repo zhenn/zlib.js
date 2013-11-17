@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>insertAfter(para)</title>
+<link href="../../style/global.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+	<iframe src="../../top.html" frameborder="0" id="top" style="width:100%; height:80px;"></iframe>
+	
+	<h1>insertAfter(para)</h1>
+	<div class="content">
+	  <p>把所匹配元素插入到目标元素的第一个元素之后，所匹配元素可以是已经存在于document的对象，也可以是create的新对象（不是dom元素）</p>
+  </div>
+	<h2>参数</h2>
+	<div class="content">
+	  <p><strong>para</strong>(zlib)：必须是$取得的已经存在于document中的对象</p>
+  </div>
+	<h2>返回值</h2>
+	<div class="content">zlib，所匹配对象</div>
+	<h2>用法演示</h2>
+	<h3>在id=&quot;obj&quot;元素之后插入一个div，并设置innerHTML=&quot;insertAfter&quot;</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	  <p>&lt;ul id=&quot;obj&quot;&gt;<br />
+  　　
+&lt;li&gt;zhenn&lt;/li&gt;<br />
+　　
+&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br />
+　　
+&lt;li class=&quot;child&quot;&gt;let me tell you &lt;/li&gt;<br />
+　　
+&lt;li&gt;success&lt;/li&gt;<br />
+&lt;/ul&gt; </p>
+	  <p>我是文本节点，不是元素节点！<br />
+      &lt;div class=&quot;other&quot;&gt;object&lt;/div&gt; </p>
+  </div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;*div&quot;).insertAfter($(&quot;#obj&quot;)).html(&quot;insertAfter&quot;);</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+	  <p>&lt;ul id=&quot;obj&quot;&gt;<br />
+  　　&lt;li&gt;zhenn&lt;/li&gt;<br />
+  　　&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br />
+  　　&lt;li class=&quot;child&quot;&gt;let me tell you&lt;/li&gt;<br />
+  　　&lt;li&gt;success&lt;/li&gt;<br />
+&lt;/ul&gt;</p>
+	  <p><strong>&lt;div&gt;insertAfter&lt;/div&gt;</strong></p>
+	  <p>我是文本节点，不是元素节点！<br />
+&lt;div class=&quot;other&quot;&gt;object&lt;/div&gt; </p>
+	</div>
+  
+  <h3>把class=&quot;other&quot;的元素插入到id=&quot;obj&quot;元素之后</h3>
+	<h4>HTML 代码</h4>
+	<div class="code">
+	  <p>&lt;ul id=&quot;obj&quot;&gt;<br />
+  　　
+&lt;li&gt;zhenn&lt;/li&gt;<br />
+　　
+&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br />
+　　
+&lt;li class=&quot;child&quot;&gt;let me tell you &lt;/li&gt;<br />
+　　
+&lt;li&gt;success&lt;/li&gt;<br />
+&lt;/ul&gt; </p>
+	  <p>&lt;div class=&quot;other&quot;&gt;object1&lt;/div&gt;</p>
+	  <p>我是文本节点，不是元素节点！<br />
+      &lt;div class=&quot;other&quot;&gt;object2&lt;/div&gt; </p>
+  </div>
+	<h4>zLib 代码</h4>
+  <div class="code">
+		<p>$(&quot;.other&quot;).insertAfter($(&quot;#obj&quot;));</p>
+  </div>
+	<h4>结果</h4>
+	<div class="code">
+	  <p>&lt;ul id=&quot;obj&quot;&gt;<br />
+  　　&lt;li&gt;zhenn&lt;/li&gt;<br />
+  　　&lt;li&gt;do you known the eventListener?&lt;/li&gt;<br />
+  　　&lt;li class=&quot;child&quot;&gt;let me tell you &lt;/li&gt;<br />
+  　　&lt;li&gt;success&lt;/li&gt;<br />
+  &lt;/ul&gt;</p>
+	  <p><strong>&lt;div class=&quot;other&quot;&gt;object1&lt;/div&gt;</strong></p>
+	  <p><strong>&lt;div class=&quot;other&quot;&gt;object2&lt;/div&gt;</strong></p>
+	  <p>我是文本节点，不是元素节点！<br />
+      </p>
+  </div>
+  
+  
+	<iframe src="../../bottom.html" frameborder="0" id="bottom" style="width:100%; height:60px;"></iframe>
+</div>
+</body>
+</html>
